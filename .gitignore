@@ -1,0 +1,7 @@
+/venv/
+.env
+**/__pycache__/
+.idea/
+*.code-workspace
+*.sqlite3
+**/static/media/
