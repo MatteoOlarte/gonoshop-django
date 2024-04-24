@@ -1,3 +1,47 @@
-<nav>
-    
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="{% url 'home:index' %}">BUZOPOLIS</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Menu
+      <i class="fas fa-bars ms-1"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 me-2">
+        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="">login</a></li>
+      </ul>
+
+      <form class="d-flex me-3" role="search">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Busca un producto"
+            aria-label="Busca un producto"
+            aria-describedby="button-addon2"
+          />
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+        </div>
+      </form>
+
+      <hr class="d-lg-none my-2 text-body-secondary" />
+
+      <button class="btn btn-outline-primary me-2" type="submit">Acceder</button>
+      <button class="btn btn btn-primary" type="submit">Registrase</button>
+    </div>
+  </div>
 </nav>
