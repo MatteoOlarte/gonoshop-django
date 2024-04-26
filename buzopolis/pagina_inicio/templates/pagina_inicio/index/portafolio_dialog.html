@@ -1,0 +1,30 @@
+{% load static %}
+<div
+  class="portfolio-modal modal fade"
+  id="portafolio_{{ p.id }}"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-bs-dismiss="modal">
+        <img src="{% static 'root/svg/close_icon.svg' %}" alt="Close modal" />
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="modal-body">
+              <h2 class="text-uppercase">{{p.titulo}}</h2>
+              <p class="item-intro text-muted">{{p.sub_titulo}}</p>
+              <img class="img-fluid d-block mx-auto" src="{{p.imagen.url}}" alt="{{p.titulo}}" />
+              <p>{{p.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
