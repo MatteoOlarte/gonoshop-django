@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pagina_inicio.apps.PaginaInicioConfig'
+    'pagina_inicio.apps.PaginaInicioConfig',
+    'tienda_buzopolis.apps.TiendaBuzopolisConfig'
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
