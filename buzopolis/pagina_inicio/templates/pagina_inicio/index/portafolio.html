@@ -1,104 +1,35 @@
 {% load static %}
-<section class="page-section bg-light" id="portfolio">
+
+<section class="page-section bg-light py-5">
     <div class="container">
+
       <div class="text-center">
         <h2 class="section-heading text-uppercase">Portfolio</h2>
-        <h3 class="section-subheading text-muted">
+        <h3 class="section-subheading text-muted" style="font-weight: normal">
           Estilos de moda que podrás encontrar en nuestra tienda
         </h3>
       </div>
+
       <div class="row">
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 1-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+        {% for p in portafolio %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="portfolio-item">
+              <a class="portfolio-link" data-bs-toggle="modal" href="#portafolio_{{ p.id }}">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{{p.imagen.url}}" alt="{{p.titulo}}" />
+              </a>
+
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">{{p.titulo}}</div>
+                <div class="portfolio-caption-subheading text-muted">{{p.sub_titulo}}</div>
               </div>
-              <img class="img-fluid" src="{% static 'root/img/1.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Buzos</div>
-              <div class="portfolio-caption-subheading text-muted">Ilustraciones</div>
             </div>
           </div>
-        </div>
-  
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 2-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="{% static 'root/img/2.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Zapatos</div>
-              <div class="portfolio-caption-subheading text-muted">Modelos</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4">
-          <!-- Portfolio item 3-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="{% static 'root/img/3.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Logos</div>
-              <div class="portfolio-caption-subheading text-muted">Personalización</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-          <!-- Portfolio item 4-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="{% static 'root/img/4.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Tops</div>
-              <div class="portfolio-caption-subheading text-muted">Estilos</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-          <!-- Portfolio item 5-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="{% static 'root/img/5.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Chaquetas</div>
-              <div class="portfolio-caption-subheading text-muted">Promociones</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <!-- Portfolio item 6-->
-          <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-              </div>
-              <img class="img-fluid" src="{% static 'root/img/6.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-              <div class="portfolio-caption-heading">Accesorios</div>
-              <div class="portfolio-caption-subheading text-muted">Ver más</div>
-            </div>
-          </div>
-        </div>
+
+          {% include 'pagina_inicio/index/portafolio_dialog.html' %}
+        {% endfor %}
       </div>
     </div>
   </section>

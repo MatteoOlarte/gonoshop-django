@@ -2,7 +2,7 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade">
   <div class="carousel-inner">
     {% for img in carrusel %}
-      <div class="carousel-item active">
+      <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
         <img src="{{img.imagen.url}}" class="carousel-image" alt="{{img.titulo}}" />
       </div>
     {% endfor %}
