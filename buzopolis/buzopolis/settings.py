@@ -32,13 +32,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    'buzopolis_autenticacion.apps.AutenticacionConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pagina_inicio.apps.PaginaInicioConfig'
+    'pagina_inicio.apps.PaginaInicioConfig',
+    'buzopolis_tienda.apps.TiendaBuzopolisConfig',
+    'buzopolis_facturacion.apps.BuzopolisFacturacionConfig'
+
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
