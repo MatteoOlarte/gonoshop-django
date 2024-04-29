@@ -23,5 +23,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('pagina_inicio.urls', 'pagina_inicio'), namespace='home')),
-    path('tienda/', include(('tienda_buzopolis.urls', 'tienda_buzopolis'), namespace='tienda'))
+    path('tienda/', include(('buzopolis_tienda.urls', 'buzopolis_tienda'), namespace='tienda'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
