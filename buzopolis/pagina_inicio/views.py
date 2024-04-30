@@ -9,7 +9,7 @@ def pagina_inicio(request: HttpRequest) -> HttpResponse:
     carrusel = ImagenCarrusel.objects.filter(visible=True)
     portafolio = ItemPortafolio.objects.filter(visible=True)
     context = {
-        'nombre_url': '',
+        'nombre_url': 'home:index',
         'carrusel': carrusel,
         'portafolio': portafolio
     }
