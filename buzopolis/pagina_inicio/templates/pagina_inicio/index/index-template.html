@@ -1,19 +1,17 @@
 {% extends 'root/base.html' %} 
 {% load static %} 
 
+{% block 'page-title' %}
+  Buzopolis
+{% endblock %}
+
 {% block 'page-body' %}
-
-{% include 'pagina_inicio/index/carousel.html' %}
-{% include 'pagina_inicio/index/servicios.html' %}
-{% include 'pagina_inicio/index/portafolio.html' %}
-
-<!-- Portfolio Grid-->
-
-
-
+  {% include 'pagina_inicio/index/carousel.html' %}
+  {% include 'pagina_inicio/index/servicios.html' %}
+  {% include 'pagina_inicio/index/widget_portafolio/portafolio.html' %}
 
 <!-- Team-->
-<section class="page-section bg-light" id="team">
+<section class="page-section" id="team">
   <div class="container">
     <div class="text-center">
       <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
@@ -280,7 +278,4 @@
     </div>
   </div>
 </footer>
-
-<!-- Portfolio Modals-->
-<!-- Portfolio item 1 modal popup-->
 {% endblock %}

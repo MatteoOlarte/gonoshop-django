@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-semibold" href="{% url 'home:index' %}">BUZOPOLIS</a>
+    <h1 class="d-inline">
+      <a class="navbar-brand fw-semibold" href="{% url 'home:index' %}">BUZOPOLIS</a>
+    </h1>
 
     <button
       class="navbar-toggler"
@@ -17,12 +19,20 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 me-2">
-        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="">login</a></li>
+        <li class="nav-item">
+          <a
+            class="nav-link {% if nombre_url == 'home:index' %}active{% endif %}"
+            href="{% url 'home:index' %}"
+          >
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if nombre_url == 'tienda' %}active{% endif %}" href="">Tienda</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="">Buzos</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Camisas</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Diseña</a></li>
       </ul>
 
       <form class="d-flex me-3" role="search">

@@ -8,15 +8,13 @@ from .models import ItemPortafolio
 def pagina_inicio(request: HttpRequest) -> HttpResponse:
     carrusel = ImagenCarrusel.objects.filter(visible=True)
     portafolio = ItemPortafolio.objects.filter(visible=True)
-
-
     context = {
-        'nombre_url': '',
+        'nombre_url': 'home:index',
         'carrusel': carrusel,
         'portafolio': portafolio
     }
     return render(request, 'pagina_inicio/index/index-template.html', context)
 
 
-def pagina_inicio_redirects(request: HttpRequest) -> HttpResponse:
+def pagina_inicio_redirects(_: HttpRequest) -> HttpResponse:
     return redirect('home:index')
