@@ -10,6 +10,10 @@
     --bs-body-font-family: "Roboto Slab", serif;
 }
 
+.navbar, .navbar * {
+    font-family: var(--bs-body-font-family) !important;
+}
+
 .btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--bs-primary);
