@@ -1,6 +1,7 @@
 from typing import override
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 # Create your models here.
@@ -9,6 +10,15 @@ class TipoProducto(models.Model):
 
 
 class Producto(models.Model):
+    class Meta:
+        verbose_name = 'producto'
+        verbose_name_plural = 'productos'
+        indexes = [
+            models.Index(fields=['slug'], name='idx_slug_producto'),
+            models.Index(fields=['-precio'], name='idx_precio_producto')
+        ]
+        ordering = ['-precio']
+
     class Tallas(models.TextChoices):
         XS = ('xs', 'extra small')
         S = ('s', 'small')
@@ -19,14 +29,14 @@ class Producto(models.Model):
 
     nombre = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250)
-    precio = models.DecimalField()
     description = models.TextField(max_length=2500)
-    talla = models.CharField(max_length=2, choices=Tallas, default=Tallas.S)
+    imagen = models.ImageField(upload_to='tienda/productos/%Y/%m/%d/%H')
+    talla = models.CharField(max_length=3, choices=Tallas.choices, default=Tallas.S)
+    precio = models.DecimalField(max_digits=20, decimal_places=2)
     color = models.CharField(max_length=250)
     stock = models.IntegerField()
     disponibilidad = models.BooleanField(default=True, editable=False)
     publicado = models.BooleanField(default=False)
-    imagen = models.ImageField(upload_to='tienda/productos/%Y/%m/%d/%H')
     tipo_producto = models.ForeignKey(
         to=TipoProducto,
         on_delete=models.RESTRICT,
@@ -46,6 +56,10 @@ class Producto(models.Model):
         super(Producto, self).save(args, **kwargs)
 
 
+    def get_absolute_url(self):
+        return reverse('tienda:detalle_producto', args=[self.slug, self.id])
+
+
 class Personalizado(models.Model):
     nombre = models.CharField(max_length=250)
     # aquí deben poner atributos como posición de la imagen, la imagen
@@ -53,8 +67,8 @@ class Personalizado(models.Model):
 
 
 class ComentarioProducto(models.Model):
-    titulo = models.CharField(250)
-    contenido = models.CharField(25000)
+    titulo = models.CharField(max_length=250)
+    contenido = models.CharField(max_length=25000)
     author = models.ForeignKey(
         to=User,
         on_delete=models.CASCADE,
