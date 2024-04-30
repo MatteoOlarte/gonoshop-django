@@ -1,8 +1,6 @@
 {% extends 'root/base.html' %} 
 {% load static %}
-
 {% block 'page-title' %}
-  Todos los Productos
 {% endblock %}
 {% block 'estilos' %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -11,7 +9,7 @@
 {% endblock %}
 
 {% block 'page-body' %}
-    <div class="contenedor">
+    <div class="wrapper">
       <aside>
         <header>
           <h1 class="logo">Buzopolis</h1>
@@ -22,22 +20,20 @@
               <button class="boton-categoria"><i class="bi bi-hand-index-fill"></i>Todos los productos</button>
             </li>
             <li>
-              <buttonclass="boton-categoria"><i class="bi bi-hand-index"></i>Buzos</button>
+              <button class="boton-categoria"><i class="bi bi-hand-index"></i>Buzos</button>
             </li>
             <li>
               <button class="boton-categoria"><i class="bi bi-hand-index"></i>Croptps</button>
             </li>
             <li>
-              <button class="boton-categoria"><i class="bi bi-hand-index-"></i>Hoddies</button>
+              <button class="boton-categoria"><i class="bi bi-hand-index"></i>Hoddies</button>
             </li>
-            <li></li>
           </ul>
          </nav>
       </aside>
       <footer>
         <p class="texto.footer">© 2024 Buzopolis</p>
       </footer>
-      <main> 
         <h2 class="titulo-principal"> Todos los productos </h2>
         <div class="contenedor-productos"> </div>
         <div class="producto"> class="producto"</div>
@@ -54,8 +50,6 @@
           <p class="producto-precio">$70 000 cp</p>
           <button class="producto-agregar">agregar</button>
         </div>
-        
-      </main>
     </div>
 
 {% endblock %}
