@@ -4,49 +4,61 @@
 {% block 'page-title' %}
   Buzopolis
 {% endblock %}
+{% block 'estilos' %}
+<link rel="stylesheet" href="{% static 'pagina_inicio/team.css' %}.css">
+  Buzopolis
+{% endblock %}
 
 {% block 'page-body' %}
   {% include 'pagina_inicio/index/carousel.html' %}
   {% include 'pagina_inicio/index/servicios.html' %}
   {% include 'pagina_inicio/index/widget_portafolio/portafolio.html' %}
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Our Team Section</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
   
-  <div class="wrapper">
-    <h1>Our Team</h1>
-    <div class="team">
-      <div class="team_member">
-        <div class="team_img">
-          <img src="team1.png" alt="Team_image">
+  <div class="home-container">
+        <div class="profile-card">
+            <div class="img">
+                <img src="{% static 'pagina_inicio/pruebateam.png' %}">
+            </div>
+            <div class="caption">
+                <h3>Tom Cruise</h3>
+                <p>Full Stack Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
         </div>
-        <h3>Paul Doe</h3>
-        <p class="role">UI developer</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
-      </div>
-      <div class="team_member">
-        <div class="team_img">
-          <img src="team2.png" alt="Team_image">
+        <div class="profile-card">
+            <div class="img">
+                <img src="./man.jpg">
+            </div>
+            <div class="caption">
+                <h3>David Wornar</h3>
+                <p>Front End Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
         </div>
-        <h3>Rosie Meg</h3>
-        <p class="role">Tester</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
-      <div class="team_member">
-        <div class="team_img">
-          <img src="team3.png" alt="Team_image">
+        <div class="profile-card">
+            <div class="img">
+                <img src="./man.jpg">
+            </div>
+            <div class="caption">
+                <h3>Vin Diesel</h3>
+                <p>Back End Developer</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
         </div>
-        <h3>Alex Wood</h3>
-        <p class="role">Support Lead</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
-      </div>
     </div>
-  </div>	
-  
-  </body>
 
 <!-- Clients-->
 <div class="py-5">
