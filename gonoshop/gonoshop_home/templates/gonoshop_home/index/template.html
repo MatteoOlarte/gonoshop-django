@@ -1,0 +1,97 @@
+{% extends 'root/base.html' %}
+{% load static %} 
+
+{% block 'estilos' %}
+  <link rel="stylesheet" href="{% static 'gonoshop_home/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'gonoshop_home/styles-card.css' %}" />
+{% endblock %}
+
+{% block 'page-body' %} 
+  {% include 'gonoshop_home/index/widget_carousel.html' %}
+
+  <section class="informacion_tienda text-centered">
+    <h1 class="p-3 fs-2">
+      UNA TIENDA DE ROPA PARA CADA ESTILO
+      <br />
+      <span class="texto-dorado">"ESTILO DE VIDA"</span>
+    </h1>
+
+    <p class="p-3 fs-4">
+      <b>GONOSHOP</b> es la tienda donde encontraras diferentes prendas con estilos que se adapten a
+      tu vida diaria y a los momentos más importantes en tu día a día
+    </p>
+  </section>
+
+  <section style="padding-top: 24px; padding-bottom: 70px" id="seccion_productos">
+    <h1 class="p-3 fs-2 text-center underline_text">NUESTROS PRODUCTOS</h1>
+
+    <div class="contenedor_tarjeta">
+      <a 
+        href="#" 
+        class="tarjeta tarjeta_animada btn_camisas">
+        <h3>Camisas</h3>
+      </a>
+
+      <a href="#" class="tarjeta tarjeta_animada btn_deportiva">
+        <h3>Ropa Deportiva</h3>
+      </a>
+
+      <a href="#" class="tarjeta tarjeta_animada btn_buzos">
+        <h3>Buzos</h3>
+      </a>
+    </div>
+  </section>
+
+  <section class="informacion_tienda">
+    <br />
+    <div class="texto_animado">
+      <h1 class="fs-2" style="padding: 0px; margin: 0px; margin-right: 10px">
+        EQUIPO PEQUEÑO CON
+      </h1>
+      <h1 class="fs-2" style="padding: 0px; margin: 0px">
+        <span class="texto-dorado" id="type-writer"> RESULTADOS GRANDES</span>
+      </h1>
+    </div>
+
+    <p class="p-3 fs-4">
+      Nuestro equipo de pequeños desarrolladores web está dedicado a crear una experiencia única para los amantes de la moda. Con pasión por el diseño y la tecnología, nos especializamos en la creación de páginas web elegantes y funcionales para marcas de ropa. Trabajamos estrechamente con nuestros clientes para comprender su visión y convertirla en una realidad en línea. Desde la creación de una interfaz de usuario intuitiva hasta la implementación de sistemas de pago seguros, nos enfocamos en ofrecer una plataforma en línea que resalte la identidad de la marca y brinde una experiencia de compra excepcional. Con atención al detalle y un enfoque en las últimas tendencias tecnológicas, nuestro equipo de pequeños desarrolladores web está listo para llevar tu negocio de moda al siguiente nivel
+    </p>
+  </section>
+
+  <section class="ubicacion" id="seccion_ubicacion">
+    <img class="mapa" src="{% static 'gonoshop_home/images/mapa.jpg' %}" alt="¿Donde Estamos Ubicados?" />
+    <div>
+      <h2>UBICADOS EN BOGOTÁ DC</h2>
+      <br />
+      <p class="fs-5 text-body" style="font-weight: 300">
+        <b>GONOSHOP</b>, una tienda de ropa que nació en Bogotá DC, una ciudad
+        llena de diversidad, cultura y creatividad. Nuestro catalogo incluye
+        buzos para que te abriguen con estilo y comodidad. Nuestros buzos son
+        más que una prenda de vestir, son una forma de expresar tu
+        personalidad y tu pasión por la vida. Te invitamos a conocer nuestro
+        catálogo y a descubrir el buzo que mejor se adapte a ti. No te
+        conformes con lo ordinario, elige lo extraordinario.
+      </p>
+
+      <div class="d-flex" id="numeros-local">
+        <div>
+          <p class="texto-dorado fs-5">-24 °C</p>
+          <p>Temperatura</p>
+        </div>
+        <div>
+          <p class="texto-dorado fs-5">0</p>
+          <p>Días de sol</p>
+        </div>
+        <div>
+          <p class="texto-dorado fs-5">100%</p>
+          <p>Crimen</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block 'page-scripts' %}
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="{% static 'gonoshop_home/scripts/writer.js' %}"></script>
+{% endblock %}

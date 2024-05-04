@@ -1,0 +1,17 @@
+{% load static %}
+<div class="contenedor_productos match-parent">
+  {% for producto in productos %}
+    <div class="producto">
+      <div class="producto_imagen">
+        <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}">
+      </div>
+      <div class="producto_info">
+        <h1>{{producto.nombre}}|</h1>
+        <p>{{producto.get_price_format}}</p>
+        <a href="{{producto.get_absolute_url}}"><button class="btn btn btn-primary">VER</button></a>
+      </div>
+    </div>
+  {% empty %}
+
+  {% endfor %}
+</div>

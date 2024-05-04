@@ -1,0 +1,49 @@
+<div class="card p-2">
+  <h5>Filtrar los Productos</h5>
+  <hr />
+  <form action="{% url 'tienda:lista_productos' %}" method="post">
+    {% csrf_token %}
+    <div class="row g-2">
+      <div class="col-12">
+        <label for="{{ form.nombre.id_for_label }}" class="from-label">
+          {{form.nombre.label}}
+        </label>
+        {{ form.nombre }}
+      </div>
+      <div class="col">
+        <label for="{{ form.precio_min.id_for_label }}" class="from-label">
+          {{form.precio_min.label}}
+        </label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          {{form.precio_min}}
+        </div>
+      </div>
+      <div class="col">
+        <label for="{{ form.precio_max.id_for_label }}" class="from-label">
+          {{form.precio_max.label}}
+        </label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          {{form.precio_max}}
+        </div>
+      </div>
+      <div class="col-12">
+        <label for="{{ form.color.id_for_label }}" class="from-label">
+          {{form.color.label}}
+        </label>
+        {{form.color}}
+      </div>
+      <div class="col-12">
+        <label for="{{ form.categoria.id_for_label }}" class="from-label">
+          {{form.categoria.label}}
+        </label>
+        {{form.categoria}}
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary col-12">Filtrar</button>
+      </div>
+    </div>
+  </form>
+</div>

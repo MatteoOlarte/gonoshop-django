@@ -1,0 +1,20 @@
+{% extends 'root/base.html' %}
+{% load static %}
+
+{% block 'estilos' %}
+  <link rel="stylesheet" href="{% static 'gonoshop_tienda/tarjetas_productos.css' %}">
+{% endblock %}
+
+
+{% block 'page-body' %}
+  <section class="seccion_productos">
+    <div class="row g-3">
+      <div class="col-lg-3">
+        {% include 'gonoshop_tienda/lista_productos/widget_filtros.html' %}
+      </div>
+      <div class="col-lg">
+        {% include 'gonoshop_tienda/lista_productos/widget_grid.html' %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

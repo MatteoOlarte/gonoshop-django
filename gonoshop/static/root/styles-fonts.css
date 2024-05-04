@@ -1,0 +1,31 @@
+:root {
+  --ámbar: #e78d17;
+  --ámbar_selected: #e78d1775;
+}
+
+*::selection{
+  background: var(--ámbar_selected);
+}
+
+.texto-dorado {
+  color: var(--ámbar);
+}
+
+.underline_text {
+  text-decoration: underline;
+}
+
+
+.underline_text.bold {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+#logo {
+  font-size: 1.7em;
+  font-family: "SpriteGraffitiShadow", sans-serif;
+}

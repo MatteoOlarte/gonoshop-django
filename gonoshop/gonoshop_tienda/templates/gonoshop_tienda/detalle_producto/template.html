@@ -1,0 +1,41 @@
+{% extends 'root/base.html' %}
+{% load static %} 
+
+{% block 'estilos' %}
+<link rel="stylesheet" href="{% static 'gonoshop_tienda/tarjetas_productos.css' %}" />
+{% endblock %} 
+
+{% block 'page-body' %}
+<section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img
+          class="card-img-top mb-5 mb-md-0"
+          id="image_view"
+          src="{{producto.imagen.url}}"
+          alt="{{producto.nombre}}"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <div class="small mb-1" id="product_id">{{producto.slug}}</div>
+        <h1 class="display-5 fw-bolder" id="product_name">{{producto.nombre}}</h1>
+        <div class="fs-5 mb-5">
+          <span id="product_price">{{producto.get_price_format}}</span>
+        </div>
+        <p class="lead" id="product_info">{{producto.description}}</p>
+        <p class="fs-5" id="product_stock">¡{{producto.stock}} disponibles!</p>
+        <div class="d-flex">
+          <button class="btn btn-outline-dark flex-grow-1" type="button" id="btn_pay">
+            <i class="bi-cart-fill me-1"></i>
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+

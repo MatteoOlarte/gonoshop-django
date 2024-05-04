@@ -1,0 +1,47 @@
+.contenedor_tarjeta {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0px 24px;
+}
+
+.contenedor_tarjeta > a {
+  text-decoration: none;
+}
+
+.tarjeta {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  color: var(--gris-medio);
+  box-shadow: 8px 8px 15px gray, inset 0px -50px 50px rgb(0, 0, 0);
+  justify-content: center;
+  align-items: end;
+}
+
+.tarjeta_animada:hover {
+  animation: movimiento_tarjeta_1;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  box-shadow: 8px 8px 15px gray, inset 0px -50px 50px rgb(0, 0, 0);
+}
+
+
+@keyframes movimiento_tarjeta_1 {
+  to {
+    transform: scale(1.1);
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contenedor_tarjeta {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .tarjeta {
+    width: 85%;
+    height: 450px;
+  }
+}
