@@ -11,7 +11,14 @@
   --dorado: #ffd700;
   --ámbar: #e78d17;
   --ámbar_selected: #e78d1775;
+  --shadow: #808080;
 }
+
+[data-bs-theme="dark"] {
+  --gris-claro: #0e0e0e;
+  --shadow: #0e0e0e;
+}
+
 
 .img-block {
   width: 100%;
