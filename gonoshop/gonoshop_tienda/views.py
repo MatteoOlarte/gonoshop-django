@@ -1,7 +1,6 @@
-import sys
+from django.db.models import Q
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
-from django.db.models import Q
 
 from .forms import FiltroProductos
 from .models import ColorProducto
@@ -9,7 +8,7 @@ from .models import Producto
 from .models import TipoProducto
 
 
-# Create your views here.
+# Create your views here.   
 def lista_productos_all(request: HttpRequest) -> HttpResponse:
     colores = list(ColorProducto.objects.all())
     tipos = list(TipoProducto.objects.all())
@@ -26,7 +25,7 @@ def lista_productos_all(request: HttpRequest) -> HttpResponse:
             precio_max = cd.get('precio_max') or 999_999_999
             color = cd['color']
             categoria = cd['categoria']
-            
+
             productos = Producto.objects.filter(
                 Q(nombre__icontains=nombre) | Q(description__icontains=nombre),
                 precio__gt=precio_min,
@@ -39,7 +38,7 @@ def lista_productos_all(request: HttpRequest) -> HttpResponse:
     else:
         productos = Producto.objects.all()
         form = FiltroProductos(colores, tipos)
-    
+
     context = {
         'url_name': 'tienda',
         'productos': productos,
