@@ -38,7 +38,9 @@
         <li class="nav-item"><a class="nav-link" href="">Diseña</a></li>
       </ul>
 
-      <form class="d-flex me-3" role="search">
+      <form class="d-flex me-3" method="post" action="{% url 'tienda:lista_productos' %}" role="search">
+        {% csrf_token %}
+        
         <div class="input-group">
           <input
             type="text"
@@ -46,8 +48,9 @@
             placeholder="Busca un producto"
             aria-label="Busca un producto"
             aria-describedby="button-addon2"
+            name="nombre"
           />
-          <button class="btn btn-outline-primary" type="button" id="button-addon2">Buscar</button>
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </div>
       </form>
 
