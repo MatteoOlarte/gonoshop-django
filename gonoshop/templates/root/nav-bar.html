@@ -35,12 +35,20 @@
             Tienda</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link {% if url_name == 'tienda:carrito' %}active{% endif %}"
+            href="{% url 'tienda:carrito' %}"
+          >
+            carrito</a
+          >
+        </li>
         <li class="nav-item"><a class="nav-link" href="">Diseña</a></li>
       </ul>
 
       <form class="d-flex me-3" method="post" action="{% url 'tienda:lista_productos' %}" role="search">
         {% csrf_token %}
-        
+
         <div class="input-group">
           <input
             type="text"
@@ -61,7 +69,9 @@
           <a class="btn btn-outline-primary me-2" href="{% url 'auth:login' %}" role="button">
             Acceder
           </a>
-          <a class="btn btn btn-primary" href="{% url 'auth:register' %}" role="button"> Acceder </a>
+          <a class="btn btn btn-primary" href="{% url 'auth:register' %}" role="button"> 
+            Registrase 
+          </a>
         </div>
       {% else %}
         <div class="d-flex align-items-center">
