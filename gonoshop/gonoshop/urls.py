@@ -23,5 +23,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('gonoshop_home.urls', 'gonoshop_home'), namespace='home')),
-    path('tienda/', include(('gonoshop_tienda.urls', 'gonoshop_tienda'), namespace='tienda'))
+    path('tienda/', include(('gonoshop_tienda.urls', 'gonoshop_tienda'), namespace='tienda')),
+    path('auth/', include(('gonoshop_auth.urls', 'gonoshop_auth'), namespace='auth'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
