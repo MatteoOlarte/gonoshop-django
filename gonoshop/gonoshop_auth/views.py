@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, Http404
 from django.contrib.auth import authenticate, login, logout
 
 from gonoshop_auth.models import User
@@ -25,7 +25,7 @@ def login_view(request: HttpRequest) -> HttpResponse:
                     return redirect('home:index')
                 else:
                     return HttpResponse('Su cuenta esta suspendida')
-
+        
     context = {
         'tipo': tipo,
         'form': form
