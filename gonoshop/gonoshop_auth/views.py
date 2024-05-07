@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from gonoshop_auth.models import User
 from .forms import UserRegistrationForm
@@ -57,3 +57,8 @@ def register_view(request: HttpRequest) -> HttpResponse:
         'form': form
     }
     return render(request, 'gonoshop_auth/authentication/template.html', context)
+
+
+def logout_view(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return redirect('home:index')
