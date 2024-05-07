@@ -1,9 +1,9 @@
 from django.db import models
 from typing import override
 from django.db import models
-from django.contrib.auth.models import User
 from django.urls import reverse
 
+from gonoshop_auth.models import User
 
 # Create your models here.
 class TipoProducto(models.Model):
