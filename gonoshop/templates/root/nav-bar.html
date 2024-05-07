@@ -1,9 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container">
     <h1 class="d-inline">
-      <a class="navbar-brand fw-semibold" href="{% url 'home:index' %}">
-        GONOSHOP
-      </a>
+      <a class="navbar-brand fw-semibold" href="{% url 'home:index' %}"> GONOSHOP </a>
     </h1>
 
     <button
@@ -57,8 +55,22 @@
 
       <hr class="d-lg-none my-2 text-body-primary" />
 
-      <button class="btn btn-outline-primary me-2" type="submit">Acceder</button>
-      <button class="btn btn btn-primary" type="submit">Registrase</button>
+      {% if not user.is_authenticated %}
+        <div class="d-flex">
+          <a class="btn btn-outline-primary me-2" href="{% url 'auth:login' %}" role="button">
+            Acceder
+          </a>
+          <a class="btn btn btn-primary" href="{% url 'auth:register' %}" role="button"> Acceder </a>
+        </div>
+      {% else %}
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-user m-0 me-2 fs-5"></i>
+          <p class="m-0 me-3">
+            {{user.username}}
+          </p>
+          <a class="btn btn btn-primary" href="{% url 'auth:logout' %}" role="button"> Salir </a>
+        </div>
+      {% endif %}
     </div>
   </div>
 </nav>

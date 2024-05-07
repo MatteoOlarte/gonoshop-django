@@ -1,0 +1,30 @@
+<form action="{% url 'auth:login' %}" method="post" class="row gy-2 w-100">
+  {% csrf_token %}
+  <div class="col-lg-12">
+    <label for="{{form.email.id_for_label}}" class="form-label">
+      {{form.email.label}}
+    </label>
+
+    {{form.email}}
+    <div class="form-text">
+      {{form.email.errors}}
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <label for="{{form.password.id_for_label}}" class="form-label">
+      {{form.password.label}}
+    </label>
+
+    {{form.password}}
+    <div class="form-text">
+      {{form.password.errors}}
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn btn-primary w-100">
+      Acceder
+    </button>
+  </div>
+</form>

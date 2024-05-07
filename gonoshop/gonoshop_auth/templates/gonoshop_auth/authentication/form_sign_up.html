@@ -1,0 +1,64 @@
+<form action="{% url 'auth:register' %}" method="post" class="row gy-2 w-100">
+  {% csrf_token %}
+
+  <div class="col-12">
+    <label for="{{form.first_name.id_for_label}}" class="form-label">
+      {{form.first_name.label}}
+    </label>
+  
+    {{form.first_name}}
+    <div class="form-text">
+      {{form.first_name.errors}}
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="{{form.username.id_for_label}}" class="form-label">
+      {{form.username.label}}
+    </label>
+    
+    {{form.username}}
+    <div class="form-text">
+      {{form.username.errors}}
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="{{form.email.id_for_label}}" class="form-label">
+      {{form.email.label}}
+    </label>
+
+    {{form.email}}
+    <div class="form-text">
+      {{form.email.errors}}
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <label for="{{form.password.id_for_label}}" class="form-label">
+      {{form.password.label}}
+    </label>
+
+    {{form.password}}
+    <div class="form-text">
+      {{form.password.errors}}
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <label for="{{form.password_confirm.id_for_label}}" class="form-label">
+      {{form.password_confirm.label}}
+    </label>
+
+    {{form.password_confirm}}
+    <div class="form-text">
+      {{form..errors}}
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn btn-primary w-100">
+      Registrarse
+    </button>
+  </div>
+</form>
