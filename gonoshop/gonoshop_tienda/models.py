@@ -102,3 +102,6 @@ class ComentarioProducto(models.Model):
         related_name='comentarios',
         related_query_name='comentario'
     )
+
+    
+

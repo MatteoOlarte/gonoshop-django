@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gonoshop_home.apps.HomeConfig',
     'gonoshop_tienda.apps.GonoshopTiendaConfig',
-    'gonoshop_auth.apps.GonoshopAuthConfig'
+    'gonoshop_auth.apps.GonoshopAuthConfig',
+    'gonoshop_pagos.apps.GonoshopPagosConfig'
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

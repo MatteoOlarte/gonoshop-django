@@ -27,6 +27,7 @@
         <p class="lead" id="product_info">{{producto.description}}</p>
         <p class="fs-5" id="product_stock">¡{{producto.stock}} disponibles!</p>
         <div class="d-flex">
+          <a href="{% url 'gonoshop_pagos:pago_producto' producto.id %}">dddd</a>
           <button class="btn btn btn-primary flex-grow-1" type="button" id="btn_pay">
             <i class="bi-cart-fill me-1"></i>Comprar
           </button>

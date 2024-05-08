@@ -1,6 +1,6 @@
 from django.db.models import Q
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .forms import FiltroProductos
 from .models import ColorProducto
@@ -48,7 +48,7 @@ def lista_productos_all(request: HttpRequest) -> HttpResponse:
 
 
 def detalle_producto(request: HttpRequest, nombre_producto: str, _id: int) -> HttpResponse:
-    producto = Producto.objects.get(id=_id)
+    producto = get_object_or_404(Producto, id=_id)
     context = {
         'url_name': 'tienda',
         'producto': producto
