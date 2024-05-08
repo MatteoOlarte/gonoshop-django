@@ -29,7 +29,7 @@ def pago_producto(request: HttpRequest, id: int) -> HttpResponse:
 
             message = EmailMessage(
                 'Compras Gonoshop', 
-                f'Se ha registrado una nueva compra de los productos de la tienda, producto comprado: {1}, nombre del comprador: {name}, direcion de envió: {direcion}, numero de aprobación #9112001',
+                f'Se ha registrado una nueva compra de los productos de la tienda, producto comprado: {request.build_absolute_uri(producto.get_absolute_url())}, nombre del comprador: {name}, direcion de envió: {direcion}, numero de aprobación #9112001',
                 reply_to=[email], to=[settings.EMAIL_HOST_USER])
             message.send()
 
