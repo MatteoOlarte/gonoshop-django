@@ -1,12 +1,14 @@
 from django.db.models import Q
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .forms import FiltroProductos
 from .models import ColorProducto
 from .models import Producto
 from .models import TipoProducto
-
+from .models import SacoPersonalizado
+from django.shortcuts import render, redirect
+from .forms import SacoPersonalizadoForm
 
 # Create your views here.   
 def lista_productos_all(request: HttpRequest) -> HttpResponse:
@@ -48,7 +50,7 @@ def lista_productos_all(request: HttpRequest) -> HttpResponse:
 
 
 def detalle_producto(request: HttpRequest, nombre_producto: str, _id: int) -> HttpResponse:
-    producto = Producto.objects.get(id=_id)
+    producto = get_object_or_404(Producto, id=_id)
     context = {
         'url_name': 'tienda',
         'producto': producto
@@ -56,8 +58,13 @@ def detalle_producto(request: HttpRequest, nombre_producto: str, _id: int) -> Ht
     return render(request, 'gonoshop_tienda/detalle_producto/template.html', context)
 
 
-def editor_producto(request: HttpRequest, nombre_producto: str, _id: int) -> HttpResponse:
-    context = {
-        'url_name': 'tienda'
-    }
-    return render(request, 'gonoshop_tienda/editor_producto/template.html', context)
+def editor_producto(request):
+    if request.method == 'POST':
+        form = SacoPersonalizadoForm(request.POST, request.FILES)
+        if form.is_valid():
+            saco_personalizado = form.save()
+            # Lógica para agregar el saco personalizado al carrito de compras
+            return redirect('pagina_de_carrito')  # Redirigir a la página de carrito de compras
+    else:
+        form = SacoPersonalizadoForm()
+    return render(request, 'gonoshop_tienda/editor_producto/template.html', {'form': form})
