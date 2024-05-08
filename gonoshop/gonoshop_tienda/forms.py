@@ -2,6 +2,7 @@ from django import forms
 
 from .models import ColorProducto as Color
 from .models import TipoProducto as Categoria
+from .models import SacoPersonalizado
 
 
 # Create forms views here.
@@ -35,3 +36,9 @@ class FiltroProductos(forms.Form):
 
         self.fields['categoria'].choices = category_choices
         self.fields['categoria'].widget.attrs['class'] = 'form-select'
+
+
+class SacoPersonalizadoForm(forms.ModelForm):
+    class Meta:
+        model = SacoPersonalizado
+        fields = ['imagen', 'color']

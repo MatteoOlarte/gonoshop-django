@@ -6,17 +6,17 @@
 {% endblock %} 
 
 {% block 'page-title' %}
-  paga
+  zona de pagos
 {% endblock %}
 
 {% block 'page-body' %}
+
   {% if success %}
     <div class="alert alert-success" role="alert">
       El pago se ha realizado con éxito, estratemos en contacto para cuadrar el envió.
     </div>
-  {% else %}
-    
   {% endif %}
+
   <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="row gx-4 gx-lg-5 align-items-center">
@@ -36,10 +36,11 @@
             <span id="product_price">{{producto.get_price_format}} (IVA incluido)</span>
           </div>
 
-          <form action="{% url 'pagos:pago_producto' producto.id %}" method="post" class="row g-2 w-100">
+          <form action="" method="post" class="row g-2">
             {% csrf_token %}
+
             <div class="col-12">
-              <label for="{{form.nombre.id_for_label}}" class="form-label">
+              <label for="{{form.nombre.id_for_label}}">
                 {{form.nombre.label}}
               </label>
 
@@ -50,7 +51,62 @@
             </div>
 
             <div class="col-12">
-              <button type="submit" class="btn btn btn-primary w-100">Pagar</button>
+              <label for="{{form.email.id_for_label}}">
+                {{form.email.label}}
+              </label>
+
+              {{form.email}}
+              <div class="form-text">
+                {{form.email.errors}}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="{{form.direcion.id_for_label}}">
+                {{form.direcion.label}}
+              </label>
+
+              {{form.direcion}}
+              <div class="form-text">
+                {{form.direcion.errors}}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="{{form.numero_tarjeta.id_for_label}}">
+                {{form.numero_tarjeta.label}}
+              </label>
+
+              {{form.numero_tarjeta}}
+              <div class="form-text">
+                {{form.numero_tarjeta.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label for="{{form.cvv.id_for_label}}">
+                {{form.cvv.label}}
+              </label>
+
+              {{form.cvv}}
+              <div class="form-text">
+                {{form.cvv.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label for="{{form.fecha_vencimiento.id_for_label}}">
+                {{form.fecha_vencimiento.label}}
+              </label>
+
+              {{form.fecha_vencimiento}}
+              <div class="form-text">
+                {{form.fecha_vencimiento.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn btn-primary w-100">pagar</button>
             </div>
           </form>
         </div>

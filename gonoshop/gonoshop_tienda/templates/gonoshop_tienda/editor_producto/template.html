@@ -1,1 +1,76 @@
-{% extends 'root/base.html' %}
+{% extends 'root/base.html' %} 
+{% load static %} 
+
+{% block 'estilos' %}
+  <link rel="stylesheet" href="{% static 'gonoshop_tienda/style.css' %}" />
+{% endblock %} 
+
+{% block 'page-title' %} 
+editor productos 
+{% endblock %} 
+
+{% block 'page-body' %}
+<div class="ColorObject">
+  <h4>Personalizar</h4>
+</div>
+<div class="PrincipalCompra">
+  <!--Imagen del saco-->
+  <div class="Foto-fondo" id="fotoFondo"></div>
+
+  <!--Opciones características del saco-->
+  <div class="Caracteristica-Principal">
+    <div class="Carta-Principal">
+      <div class="Capota">
+        <h3>Capota</h3>
+        <input type="checkbox" name="" class="capota-persona" />
+      </div>
+
+      <div class="Talla-Carta">
+        <h3>Talla</h3>
+        <input type="checkbox" id="tallaS" class="Boton-Talla" name="tallaS" />
+        <label for="tallaS" class="Etiqueta-Talla">S</label>
+        <input type="checkbox" id="tallaM" class="Boton-Talla" name="tallaM" />
+        <label for="tallaM" class="Etiqueta-Talla">M</label>
+        <input type="checkbox" id="tallaL" class="Boton-Talla" name="tallaL" />
+        <label for="tallaL" class="Etiqueta-Talla">L</label>
+        <input type="checkbox" id="tallaXL" class="Boton-Talla" name="tallaXL" />
+        <label for="tallaXL" class="Etiqueta-Talla">XL</label>
+        <input type="checkbox" id="tallaXXL" class="Boton-Talla" name="tallaXXL" />
+        <label for="tallaXXL" class="Etiqueta-Talla">XXL</label>
+      </div>
+      <div class="Color-Carta">
+        <h3>Selecciona un Color</h3>
+        <div class="Color-Buzo">
+          <input type="checkbox" id="color1" name="color1" class="Boton-Color" />
+          <label for="color1" class="Colores-buzo" style="background-color: #fff"></label>
+          <input type="checkbox" id="color2" name="color2" class="Boton-Color" />
+          <label for="color2" class="Colores-buzo" style="background-color: #ccc"></label>
+          <input type="checkbox" id="color3" name="color3" class="Boton-Color" />
+          <label for="color3" class="Colores-buzo" style="background-color: black"></label><br />
+          <input type="checkbox" id="color4" name="color4" class="Boton-Color" />
+          <label for="color4" class="Colores-buzo" style="background-color: #f5f5dc"></label>
+          <input type="checkbox" id="color5" name="color5" class="Boton-Color" />
+          <label for="color5" class="Colores-buzo" style="background-color: #f7a4f9"></label>
+          <input type="checkbox" id="color6" name="color6" class="Boton-Color" />
+          <label for="color6" class="Colores-buzo" style="background-color: #66e2d6"></label><br />
+          <input type="checkbox" id="color7" name="color7" class="Boton-Color" />
+          <label for="color7" class="Colores-buzo" style="background-color: #121635"></label>
+          <input type="checkbox" id="color8" name="color8" class="Boton-Color" />
+          <label for="color8" class="Colores-buzo" style="background-color: #046918"></label>
+          <input type="checkbox" id="color9" name="color9" class="Boton-Color" />
+          <label for="color9" class="Colores-buzo" style="background-color: #69040a"></label>
+        </div>
+      </div>
+      <div class="Boton-Carta">
+        <input type="file" id="inputImagen" style="display: none" />
+        <label for="inputImagen" class="Boton-Caracteristica">Subir Foto</label>
+        <input type="submit" value="Añadir" class="Boton-Caracteristica" />
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block 'page-scripts' %}
+    <script src="{% static 'gonoshop_tienda/editar.js' %}"></script>
+{% endblock %}

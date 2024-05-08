@@ -103,5 +103,8 @@ class ComentarioProducto(models.Model):
         related_query_name='comentario'
     )
 
-    
+
+class SacoPersonalizado(models.Model):
+    imagen = models.ImageField(upload_to='imagenes_sacos/')
+    color = models.CharField(max_length=50)
 
