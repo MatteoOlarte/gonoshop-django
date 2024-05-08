@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/editar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'js/editar.js' %}">
+</head>
+<body>
+    <div class="ColorObject">
+        <h4>Personalizar</h4>
+    </div>
+    <div class="personaliza">
+        <div class="Foto-fondo" id="fotoFondo">
+            <!-- Aquí se mostrará la imagen -->
+        </div>
+        <div class="añadirbuzo">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="inputImagen" class="Boton-Caracteristica">Subir Foto</label>
+                <input type="file" id="inputImagen" style="display: none;">
+                <label for="tamañoImagen">Tamaño de la imagen:</label>
+                <input type="range" id="tamañoImagen" min="10" max="200" step="5" value="70">
+            </form>
+        </div>
+    </div>    
+    <script src="{% static 'js/editar.js' %}"></script>
+</body>
+</html>

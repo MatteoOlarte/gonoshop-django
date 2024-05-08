@@ -1,0 +1,118 @@
+{% extends 'root/base.html' %}
+{% load static %} 
+
+{% block 'estilos' %}
+<link rel="stylesheet" href="{% static 'gonoshop_tienda/tarjetas_productos.css' %}" />
+{% endblock %} 
+
+{% block 'page-title' %}
+  zona de pagos
+{% endblock %}
+
+{% block 'page-body' %}
+
+  {% if success %}
+    <div class="alert alert-success" role="alert">
+      El pago se ha realizado con éxito, estratemos en contacto para cuadrar el envió.
+    </div>
+  {% endif %}
+
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="row gx-4 gx-lg-5 align-items-center">
+        <div class="col-md-6">
+          <img
+            class="card-img-top mb-5 mb-md-0"
+            id="image_view"
+            src="{% static 'gonoshop_pagos/images/shopping_cart.jpg' %}"
+            alt="{{producto.nombre}}"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <div class="small mb-1" id="product_id">{{producto.slug}}</div>
+          <h1 class="display-5 fw-bolder" id="product_name">{{producto.nombre}}</h1>
+          <div class="fs-5 mb-5">
+            <span id="product_price">{{producto.get_price_format}} (IVA incluido)</span>
+          </div>
+
+          <form action="" method="post" class="row g-2">
+            {% csrf_token %}
+
+            <div class="col-12">
+              <label for="{{form.nombre.id_for_label}}">
+                {{form.nombre.label}}
+              </label>
+
+              {{form.nombre}}
+              <div class="form-text">
+                {{form.nombre.errors}}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="{{form.email.id_for_label}}">
+                {{form.email.label}}
+              </label>
+
+              {{form.email}}
+              <div class="form-text">
+                {{form.email.errors}}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="{{form.direcion.id_for_label}}">
+                {{form.direcion.label}}
+              </label>
+
+              {{form.direcion}}
+              <div class="form-text">
+                {{form.direcion.errors}}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="{{form.numero_tarjeta.id_for_label}}">
+                {{form.numero_tarjeta.label}}
+              </label>
+
+              {{form.numero_tarjeta}}
+              <div class="form-text">
+                {{form.numero_tarjeta.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label for="{{form.cvv.id_for_label}}">
+                {{form.cvv.label}}
+              </label>
+
+              {{form.cvv}}
+              <div class="form-text">
+                {{form.cvv.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label for="{{form.fecha_vencimiento.id_for_label}}">
+                {{form.fecha_vencimiento.label}}
+              </label>
+
+              {{form.fecha_vencimiento}}
+              <div class="form-text">
+                {{form.fecha_vencimiento.errors}}
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn btn-primary w-100">pagar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
