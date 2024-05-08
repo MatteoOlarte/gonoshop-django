@@ -39,17 +39,20 @@ botonesColor.forEach(boton => {
 //cargar la imagen
 document.getElementById('inputImagen').addEventListener('change', function(event) {
     const input = event.target;
+
+    console.log("input imagen")
     if (input.files && input.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            
+            console.log("imagen subidad");
             const img = document.createElement('img');
+            img.classList.add("dec")
             img.src = e.target.result;
             img.onload = function() {
                 
                 const container = document.getElementById('fotoFondo');
-                const posX = (container.clientWidth - img.width) / 2;
-                const posY = (container.clientHeight - img.height) / 2;
+                const posX = 0;
+                const posY = 0;
                 img.style.left = posX + 'px';
                 img.style.top = posY + 'px';
                 
@@ -57,6 +60,7 @@ document.getElementById('inputImagen').addEventListener('change', function(event
                 
                 makeDraggable(img);
             }
+
         }
         reader.readAsDataURL(input.files[0]); 
     }

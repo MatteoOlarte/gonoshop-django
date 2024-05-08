@@ -15,7 +15,14 @@ editor productos
 </div>
 <div class="PrincipalCompra">
   <!--Imagen del saco-->
-  <div class="Foto-fondo" id="fotoFondo"></div>
+  <div 
+    class="Foto-fondo" 
+    id="fotoFondo" >
+    <img 
+      class="fondo"
+      src="{% static 'gonoshop_tienda/images/Fondo.png' %}" 
+      alt="...">
+  </div>
 
   <!--Opciones características del saco-->
   <div class="Caracteristica-Principal">
@@ -72,5 +79,5 @@ editor productos
 {% endblock %}
 
 {% block 'page-scripts' %}
-    <script src="{% static 'gonoshop_tienda/editar.js' %}"></script>
+    <script src="{% static 'gonoshop_tienda/js/editar.js' %}"></script>
 {% endblock %}

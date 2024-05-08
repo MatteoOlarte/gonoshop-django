@@ -28,7 +28,6 @@
 .Foto-fondo {
     margin-top: 25px;
     margin-left: 100px;
-    background-image: url(Fondo.png);
     background-color: transparent;
     background-size: cover; 
     background-position: center; 
@@ -38,10 +37,16 @@
     position: relative; 
     overflow: hidden; 
 }
-.Foto-fondo img{
+
+.Foto-fondo img.fondo{
+    height: 100% !important;
+    width: 100% !important;  
+}
+
+.Foto-fondo img.dec{
     position: absolute; 
-    max-width: 70px; 
-    max-height: 70px; 
+    max-width: 170px; 
+    max-height: 170px; 
     cursor: move; 
 }
 
